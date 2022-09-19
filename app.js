@@ -1,7 +1,7 @@
 // Book Class: Represents a book
 
-class Book {
-  constructor (title, author) {
+class Book { 
+  constructor(title, author) {
     this.title = title;
     this.author = author;
   }
@@ -19,7 +19,7 @@ class UI {
   static addBookToList(book) {
     const list = document.querySelector('#book-list');
 
-    const row = document.createElement("tr");
+    const row = document.createElement('tr');
 
     row.innerHTML = `
             <td>${book.title}</td>
@@ -37,8 +37,8 @@ class UI {
   }
 
   static clearFields() {
-    document.querySelector('#title').value = "";
-    document.querySelector('#author').value = "";
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
   }
 }
 
@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // Event: Add a Book
 document.querySelector('#addBtn').addEventListener('click', (e) => {
-
   // Get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
