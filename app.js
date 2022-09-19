@@ -6,6 +6,7 @@ class Book {
     this.author = author;
   }
 }
+
 // Store Class: Handles Storage
 class Store {
   static getBooks() {
@@ -56,7 +57,7 @@ class UI {
     row.innerHTML = `
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <button type="submit" class="btn">Remove</button>
+            <button type='submit' class='btn'>Remove</button>
         `;
 
     list.appendChild(row);
@@ -79,6 +80,9 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // Event: Add a Book
 document.querySelector('#addBtn').addEventListener('click', (e) => {
+  // Prevent actual
+  e.preventDefault();
+
   // Get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
@@ -107,5 +111,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
 
   // Remove book from store
-  Store.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+  Store.removeBook(
+    e.target.previousElementSibling.previousElementSibling.textContent
+  );
 });
