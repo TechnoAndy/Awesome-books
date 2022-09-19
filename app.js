@@ -9,37 +9,37 @@ class Book {
 
 // Store Class: Handles Storage
 class Store {
-    static getBooks() {
-      let books;
-      if (localStorage.getItem('books') === null) {
-        books = [];
-      } else {
-        books = JSON.parse(localStorage.getItem('books'));
-      }
-  
-      return books;
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
     }
-  
-    static addBook(book) {
-      const books = Store.getBooks();
-  
-      books.push(book);
-  
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-  
-    static removeBook(title) {
-      const books = Store.getBooks();
-  
-      books.forEach((book, index) => {
-        if (book.title === title) {
-          books.splice(index, 1);
-        }
-      });
-  
-      localStorage.setItem('books', JSON.stringify(books));
-    }
+
+    return books;
   }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+
+    books.push(book);
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(title) {
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if (book.title === title) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+}
 
 // UI Class: Handle UI Tasks
 
@@ -76,8 +76,6 @@ class UI {
   }
 }
 
-
-
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
@@ -91,8 +89,8 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
 
   // Validate
-  if (title === '' || author === '') {
-   UI.showAlert('Please fill in all the fields');
+  if (title === ' || author === ') {
+    UI.showAlert('Please fill in all the fields');
   } else {
     // Instantiate book
     const book = new Book(title, author);
@@ -114,5 +112,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
 
   // Remove book from store
-  Store.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+  Store.removeBook(
+    e.target.previousElementSibling.previousElementSibling.textContent
+  );
 });
