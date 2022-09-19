@@ -81,12 +81,13 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // Event: Add a Book
 document.querySelector('#addBtn').addEventListener('click', (e) => {
+
   // Get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
 
   // Validate
-  if (title === "" || author === "") {
+  if (title === '' || author === '') {
     alert('Please fill in all the fields');
   } else {
     // Instantiate book
@@ -104,7 +105,7 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
 });
 
 // Event: Remove a book
-document.querySelector('#book-list').addEventListener("click", (e) => {
+document.querySelector('#book-list').addEventListener('click', (e) => {
   // Remove book from UI
   UI.deleteBook(e.target);
 
