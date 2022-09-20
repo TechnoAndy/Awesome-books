@@ -65,7 +65,7 @@ class AppBook {
     row.innerHTML = `
         <td>${book.title}</td>
         <td>${book.author}</td>
-        <button type='submit' class='btn'>Remove</button>
+        <td><button type='submit' class='btn'>Remove</button></td>
         `;
 
     list.appendChild(row);
@@ -73,7 +73,7 @@ class AppBook {
 
   static deleteBook(el) {
     if (el.classList.contains('btn')) {
-      el.parentElement.remove();
+      el.parentElement.parentElement.remove();
     }
   }
 
@@ -94,17 +94,22 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
   const title = document.forms[0].title.value;
   const author = document.forms[0].author.value;
 
-  // Instantiate book
-  const book = new Book(title, author);
+  // Validation Check
+  if (title === '' || author === '') {
+    window.alert('Please Fill out both fields!!');
+  } else {
+    // Instantiate book
+    const book = new Book(title, author);
 
-  // save the book in local storage
-  Store.saveBook(book);
+    // save the book in local storage
+    Store.saveBook(book);
 
-  // Display book to the Screen
-  AppBook.addBookToList(book);
+    // Display book to the Screen
+    AppBook.addBookToList(book);
 
-  // Clear fields
-  AppBook.clearFields();
+    // Clear fields
+    AppBook.clearFields();
+  }
 });
 
 // Event: Remove a book
