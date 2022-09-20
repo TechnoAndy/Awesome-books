@@ -89,7 +89,7 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
   const author = document.querySelector('#author').value;
 
   // Validate
-  if (title === ' || author === ') {
+  if (title === '' || author === '') {
     UI.showAlert('Please fill in all the fields');
   } else {
     // Instantiate book
