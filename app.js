@@ -11,18 +11,11 @@ class Book {
 
 // Store Class: Handles Storage
 class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
-    return books;
+  #checkStorage() {
+    return localStorage.getItem('books');
   }
 
-  static addBook(book) {
+  static saveBook(book) {
     const books = Store.getBooks();
 
     books.push(book);
@@ -30,7 +23,7 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(title) {
+  static unSaveBook(title) {
     const books = Store.getBooks();
 
     books.forEach((book, index) => {
@@ -41,45 +34,62 @@ class Store {
 
     localStorage.setItem('books', JSON.stringify(books));
   }
-}
 
-// UI Class: Handle UI Tasks
-
-class UI {
-  static displayBooks() {
-    const books = Store.getBooks();
-
-    books.forEach((book) => UI.addBookToList(book));
-  }
-
-  static addBookToList(book) {
-    const list = document.querySelector('#book-list');
-
-    const row = document.createElement('tr');
-
-    row.innerHTML = `
-        <td>${book.title}</td>
-        <td>${book.author}</td>
-        <button type='submit' class='btn'>Remove</button>
-        `;
-
-    list.appendChild(row);
-  }
-
-  static deleteBook(el) {
-    if (el.classList.contains('btn')) {
-      el.parentElement.remove();
+  static getBooks() {
+    let books = [];
+    if (this.#checkStorage()) {
+      books = JSON.parse(localStorage.getItem('books'));
     }
-  }
 
-  static clearFields() {
-    document.querySelector('#title').value = '';
-    document.querySelector('#author').value = '';
+    return books;
   }
 }
+
+// AppBook Class: Handle AppBook Tasks
+
+// class AppBook {
+//   // add book to screen
+//   // remove book from screen
+//   // add all books when page relode
+
+//   static displayBook() {
+
+//   }
+
+//   static displayBooks() {
+//     const books = Store.getBooks();
+
+//     books.forEach((book) => AppBook.addBookToList(book));
+//   }
+
+//   static addBookToList(book) {
+//     const list = document.querySelector('#book-list');
+
+//     const row = document.createElement('tr');
+
+//     row.innerHTML = `
+//         <td>${book.title}</td>
+//         <td>${book.author}</td>
+//         <button type='submit' class='btn'>Remove</button>
+//         `;
+
+//     list.appendChild(row);
+//   }
+
+//   static deleteBook(el) {
+//     if (el.classList.contains('btn')) {
+//       el.parentElement.remove();
+//     }
+//   }
+
+//   static clearFields() {
+//     document.querySelector('#title').value = '';
+//     document.querySelector('#author').value = '';
+//   }
+// }
 
 // Event: Display Books
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+document.addEventListener('DOMContentLoaded', AppBook.displayBooks);
 
 // Event: Add a Book
 document.querySelector('#addBtn').addEventListener('click', (e) => {
@@ -92,27 +102,29 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
 
   // Validate
   if (title === '' || author === '') {
-    UI.showAlert('Please fill in all the fields');
+    AppBook.showAlert('Please fill in all the fields');
   } else {
     // Instantiate book
     const book = new Book(title, author);
 
-    // Add book to UI
-    UI.addBookToList(book);
+    // Add book to AppBook
+    AppBook.addBookToList(book);
 
     // Add book to store
     Store.addBook(book);
 
     // Clear fields
-    UI.clearFields();
+    AppBook.clearFields();
   }
 });
 
 // Event: Remove a book
 document.querySelector('#book-list').addEventListener('click', (e) => {
-  // Remove book from UI
-  UI.deleteBook(e.target);
+  // Remove book from AppBook
+  AppBook.deleteBook(e.target);
 
   // Remove book from store
-  Store.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+  Store.removeBook(
+    e.target.previousElementSibling.previousElementSibling.textContent
+  );
 });
