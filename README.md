@@ -6,7 +6,11 @@ This Project `Awesome books` is a simple webApp that displays a list of books an
 ## Preview
 > Desktop View
 
+![desktop-v](https://user-images.githubusercontent.com/68030297/191362002-7de14946-1ff2-41f3-b0a4-c41863dc20e3.GIF)
+
 >Mobile View
+
+![mobile-v](https://user-images.githubusercontent.com/68030297/191362007-38240c62-905e-4b1b-a3d8-a98a1777a92e.GIF)
 
 ## Built With
 
