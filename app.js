@@ -1,7 +1,6 @@
 /* eslint-disable max-classes-per-file */
 
 // Book Class: Represents a book
-
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -11,10 +10,22 @@ class Book {
 
 // Store Class: Handles Storage
 class Store {
-  #checkStorage() {
+  // Check if there is a local storage for books
+  static #checkStorage() {
     return localStorage.getItem('books');
   }
 
+  // Get all the books Infos from the local storage
+  static getBooks() {
+    let books = [];
+    if (Store.#checkStorage()) {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
+
+  // Save a book in local storage
   static saveBook(book) {
     const books = Store.getBooks();
 
@@ -23,6 +34,7 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
+  // Delete a book in local storage
   static unSaveBook(title) {
     const books = Store.getBooks();
 
@@ -34,59 +46,41 @@ class Store {
 
     localStorage.setItem('books', JSON.stringify(books));
   }
-
-  static getBooks() {
-    let books = [];
-    if (this.#checkStorage()) {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
-    return books;
-  }
 }
 
 // AppBook Class: Handle AppBook Tasks
+class AppBook {
+  // Display books to the screen
+  static displayBooks() {
+    const books = Store.getBooks();
 
-// class AppBook {
-//   // add book to screen
-//   // remove book from screen
-//   // add all books when page relode
+    books.forEach((book) => AppBook.addBookToList(book));
+  }
 
-//   static displayBook() {
+  // Display one book to the screen
+  static addBookToList(book) {
+    const list = document.querySelector('#book-list');
+    const row = document.createElement('tr');
 
-//   }
+    row.innerHTML = `
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <button type='submit' class='btn'>Remove</button>
+        `;
 
-//   static displayBooks() {
-//     const books = Store.getBooks();
+    list.appendChild(row);
+  }
 
-//     books.forEach((book) => AppBook.addBookToList(book));
-//   }
+  static deleteBook(el) {
+    if (el.classList.contains('btn')) {
+      el.parentElement.remove();
+    }
+  }
 
-//   static addBookToList(book) {
-//     const list = document.querySelector('#book-list');
-
-//     const row = document.createElement('tr');
-
-//     row.innerHTML = `
-//         <td>${book.title}</td>
-//         <td>${book.author}</td>
-//         <button type='submit' class='btn'>Remove</button>
-//         `;
-
-//     list.appendChild(row);
-//   }
-
-//   static deleteBook(el) {
-//     if (el.classList.contains('btn')) {
-//       el.parentElement.remove();
-//     }
-//   }
-
-//   static clearFields() {
-//     document.querySelector('#title').value = '';
-//     document.querySelector('#author').value = '';
-//   }
-// }
+  static clearFields() {
+    document.forms[0].reset();
+  }
+}
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', AppBook.displayBooks);
@@ -97,25 +91,20 @@ document.querySelector('#addBtn').addEventListener('click', (e) => {
   e.preventDefault();
 
   // Get form values
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
+  const title = document.forms[0].title.value;
+  const author = document.forms[0].author.value;
 
-  // Validate
-  if (title === '' || author === '') {
-    AppBook.showAlert('Please fill in all the fields');
-  } else {
-    // Instantiate book
-    const book = new Book(title, author);
+  // Instantiate book
+  const book = new Book(title, author);
 
-    // Add book to AppBook
-    AppBook.addBookToList(book);
+  // save the book in local storage
+  Store.saveBook(book);
 
-    // Add book to store
-    Store.addBook(book);
+  // Display book to the Screen
+  AppBook.addBookToList(book);
 
-    // Clear fields
-    AppBook.clearFields();
-  }
+  // Clear fields
+  AppBook.clearFields();
 });
 
 // Event: Remove a book
@@ -124,7 +113,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   AppBook.deleteBook(e.target);
 
   // Remove book from store
-  Store.removeBook(
+  Store.unSaveBook(
     e.target.previousElementSibling.previousElementSibling.textContent
   );
 });
