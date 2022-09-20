@@ -120,6 +120,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // Remove book from store
   Store.unSaveBook(
     e.target.parentElement.previousElementSibling.previousElementSibling
-      .textContent
+      .textContent,
   );
 });
