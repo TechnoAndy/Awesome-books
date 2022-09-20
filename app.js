@@ -1,8 +1,6 @@
 // Book Class: Represents a book
 
-class Book {
-  title;
-  author;
+const Book = class {
   constructor(title, author) {
     this.title = title;
     this.author = author;
