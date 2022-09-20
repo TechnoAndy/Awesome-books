@@ -1,3 +1,58 @@
-.list {
-  display: none;
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
+h2 {
+  text-align: center;
+}
+
+.tabs {
+  margin-left: 250px;
+  border: 3px solid black;
+  margin-bottom: 2px;
+  background-color: bisque;
+
+}
+
+#addBtn {
+  margin-left: 380px;
+  box-shadow: 3px 4px black;
+  border: 3px solid black;
+  margin-bottom: 40px;
+}
+
+#addBtn:hover {
+  background-color: greenyellow;
+}
+
+.btn:hover {
+  background-color: crimson;
+}
+
+.btn {
+  margin-left: 100px;
+  box-shadow: 3px 4px black;
+  border: 3px solid black;
+  margin-top: 3px;
+}
+
+.table {
+  border: 3px solid black;
+  margin: auto;
+  padding: 5px 8px 8px 5px;
+  background-color: bisque;
+}
+
+.line {
+  margin-top: 20px;
+  border-bottom: 2px solid black;
+  width: 10%;
+}
+
+.addNew {
+  margin-top: -30px;
+}
+
+td {
+  padding: 10px;
 }

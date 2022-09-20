@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Awesome Books</title>
 </head>
 <body>
     <!-- List Section -->
     <section class="list" id="list">
-        <h2>Awesome Books</h2>
+        <h2>All Awesome Books</h2>
         <table class="table">
         <tbody id="book-list"></tbody>
     </table>
+    <hr class="line">
         <br>
     </section>
     <!-- AddNew Section -->
     <section class="addNew" id="addNew">
+        <h2>Add a new book</h2>
         <div class="book-input">
             <label for="title"></label>
-            <input type="text" id="title" name="title" placeholder="Title"><br><br>
+            <input type="text" id="title" class="tabs" name="title" placeholder="Title"><br><br>
             <label for="author"></label>
-            <input type="text" id="author" name="author" placeholder="Author"><br><br>
+            <input type="text" id="author" class="tabs" name="author" placeholder="Author"><br><br>
             <button type="submit" id="addBtn">Add</button>
         </div>
     </section>
