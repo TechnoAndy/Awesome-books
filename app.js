@@ -65,7 +65,7 @@ class AppBook {
     row.innerHTML = `
         <td>${book.title}</td>
         <td>${book.author}</td>
-        <td><button type='submit' class='btn'>Remove</button></td>
+        <td><button type='submit' class='btn btn-outline-dark'>Remove</button></td>
         `;
 
     list.appendChild(row);
@@ -119,6 +119,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 
   // Remove book from store
   Store.unSaveBook(
-    e.target.previousElementSibling.previousElementSibling.textContent
+    e.target.parentElement.previousElementSibling.previousElementSibling
+      .textContent
   );
 });
