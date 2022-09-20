@@ -1,37 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
     <title>Awesome Books</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- List Section -->
     <section class="list" id="list">
-        <h2>All Awesome Books</h2>
-        <table class="table">
-        <tbody id="book-list"></tbody>
-    </table>
-    <hr class="line">
-        <br>
+      <div class="container mt-4">
+        <h1>All Awesome Books</h1>
+        <table class="table table-striped border mt-4">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+        <hr class="line" />
+        <br />
+      </div>
     </section>
+
     <!-- AddNew Section -->
     <section class="addNew" id="addNew">
+      <div class="container">
         <h2>Add a new book</h2>
-        <div class="book-input">
-            <label for="title"></label>
-            <input type="text" id="title" class="tabs" name="title" placeholder="Title"><br><br>
-            <label for="author"></label>
-            <input type="text" id="author" class="tabs" name="author" placeholder="Author"><br><br>
-            <button type="submit" id="addBtn">Add</button>
-        </div>
+        <form class="form mx-auto">
+          <ul class="book-input">
+            <li>
+              <input
+                type="text"
+                id="title"
+                class="tabs form-control mb-2"
+                name="title"
+                placeholder="Title"
+              />
+            </li>
+            <li class="mb-2">
+              <input
+                type="text"
+                id="author"
+                class="tabs form-control"
+                name="author"
+                placeholder="Author"
+              />
+            </li>
+            <li>
+              <button
+                type="submit"
+                id="addBtn"
+                class="btn btn-outline-dark w-10 mx-auto"
+              >
+                Add
+              </button>
+            </li>
+          </ul>
+        </form>
+      </div>
     </section>
-<script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
-
