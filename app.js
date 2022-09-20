@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 // Book Class: Represents a book
 
 class Book {
