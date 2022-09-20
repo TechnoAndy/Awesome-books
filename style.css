@@ -11,7 +11,6 @@ h2 {
   border: 3px solid black;
   margin-bottom: 2px;
   background-color: bisque;
-
 }
 
 #addBtn {
@@ -25,16 +24,18 @@ h2 {
   background-color: greenyellow;
 }
 
-.btn:hover {
-  background-color: crimson;
-}
-
 .btn {
   margin-left: 100px;
   box-shadow: 3px 4px black;
   border: 3px solid black;
   margin-top: 3px;
 }
+
+.btn:hover {
+  background-color: crimson;
+}
+
+
 
 .table {
   border: 3px solid black;
