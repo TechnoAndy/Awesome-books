@@ -5,7 +5,7 @@ class Book {
     this.title = title;
     this.author = author;
   }
-};
+}
 
 // Store Class: Handles Storage
 class Store {
