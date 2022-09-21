@@ -17,9 +17,22 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Awesome Books</title>
   </head>
   <body>
+    <header>
+      <title>Awesome Books</title>
+      <nav>
+        <ul>
+          <li class="linkBtn-1">Awesome Books</li>
+            <li><button type="button" class="linkBtn active" id="listBtn">List</button>
+            </li>
+            <li></li>
+            <li><button type="button" class="linkBtn" id="addNewBtn">Add New</button></li>
+            <li></li>
+            <li><button type="button" class="linkBtn" id="contactBtn">Contact</button></li>
+        </ul>
+    </nav>
+    </header>
     <!-- List Section -->
     <section class="list" id="list">
       <div class="container mt-4">
@@ -76,6 +89,29 @@
         </form>
       </div>
     </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact information</h2>
+      <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!
+      </p>
+      <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586634422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+      </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <span>Copyright ©️ 2022</span>
+
+      <span>&</span>
+      <span>
+          <a href="https://github.com/TechnoAndy">TechnoAndy</a>
+      </span>
+
+    </footer>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>

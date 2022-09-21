@@ -8,6 +8,10 @@ body {
   font-family: "Comic Neue", cursive;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -36,4 +40,126 @@ h2 {
   position: relative;
   left: 100%;
   transform: translateX(-100%);
+}
+
+header {
+  display: flex;
+  justify-content: right;
+  border: 3px solid black;
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 98%;
+}
+
+nav ul {
+  display: flex;
+  font-size: 1rem;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.linkBtn {
+  /* text-decoration: none; */
+  color: black;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  padding-top: 10px;
+  border-left: 2px solid black;
+}
+
+.linkBtn-1 {
+  /* text-decoration: none; */
+  color: black;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-right: 300px;
+  margin-bottom: -20px;
+}
+
+.active {
+  color: purple;
+}
+
+.dateDisplay {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 1rem;
+  padding-right: 70px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+button {
+  border: 2px solid black;
+  box-shadow: 2px 2px 1px black;
+  padding: 0.25rem;
+}
+
+input {
+  height: 30px;
+  margin: 5px 0;
+  border: 3px solid black;
+}
+
+.contact {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 2rem;
+}
+
+/* .contact h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+} */
+
+.contact p,
+.contact ul {
+  text-align: left;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact ul {
+  margin-left: 3rem;
+}
+
+/* Footer Section */
+footer {
+  width: 100%;
+  border: 3px solid black;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer img {
+  width: 1rem;
+  color: white;
 }
