@@ -136,16 +136,16 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 });
 
 // !!! Single Page Application "showing and hiding section"
-const navButtons = document.querySelectorAll('.linkBtn');
-navButtons.forEach((link) => {
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    const section = document.querySelector(
+    const page = document.querySelector(
       `#${link.getAttribute('data-trigger')}`
     );
 
     // remove current class from the one who have it.
     document.querySelector('.current').classList.remove('current');
     // add the current class to the current section
-    section.classList.add('current');
+    page.classList.add('current');
   });
 });
