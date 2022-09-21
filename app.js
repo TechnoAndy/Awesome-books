@@ -1,13 +1,13 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-classes-per-file */
 
-const listBtn = document.querySelector('#listBtn');
-const addNewBtn = document.querySelector('#addNewBtn');
-const contactBtn = document.querySelector('#contactBtn');
+// const listBtn = document.querySelector('#listBtn');
+// const addNewBtn = document.querySelector('#addNewBtn');
+// const contactBtn = document.querySelector('#contactBtn');
 
-const listSec = document.querySelector('.list');
-const addNewSec = document.querySelector('.addNew');
-const contactSec = document.querySelector('.contact');
+// const listSec = document.querySelector('.list');
+// const addNewSec = document.querySelector('.addNew');
+// const contactSec = document.querySelector('.contact');
 
 /* const addBtn = document.querySelector('#addBtn'); */
 
@@ -131,34 +131,21 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // Remove book from store
   Store.unSaveBook(
     e.target.parentElement.previousElementSibling.previousElementSibling
-      .textContent,
+      .textContent
   );
 });
 
-listBtn.addEventListener('click', () => {
-  listBtn.classList.add('active');
-  addNewBtn.classList.remove('active');
-  contactBtn.classList.remove('active');
-  listSec.style.display = 'block';
-  addNewSec.style.display = 'none';
-  contactSec.style.display = 'none';
-});
+// !!! Single Page Application "showing and hiding section"
+const navButtons = document.querySelectorAll('.linkBtn');
+navButtons.forEach((link) => {
+  link.addEventListener('click', () => {
+    const section = document.querySelector(
+      `#${link.getAttribute('data-trigger')}`
+    );
 
-addNewBtn.addEventListener('click', () => {
-  listBtn.classList.remove('active');
-  addNewBtn.classList.add('active');
-  contactBtn.classList.remove('active');
-  listSec.style.display = 'none';
-  addNewSec.style.display = 'block';
-  contactSec.style.display = 'none';
+    // remove current class from the one who have it.
+    document.querySelector('.current').classList.remove('current');
+    // add the current class to the current section
+    section.classList.add('current');
+  });
 });
-
-contactBtn.addEventListener('click', () => {
-  listBtn.classList.remove('active');
-  addNewBtn.classList.remove('active');
-  contactBtn.classList.add('active');
-  listSec.style.display = 'none';
-  addNewSec.style.display = 'none';
-  contactSec.style.display = 'flex';
-});
-
