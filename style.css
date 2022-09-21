@@ -72,6 +72,7 @@ nav ul li {
   display: flex;
   padding-top: 10px;
   border-left: 2px solid black;
+  width: 100%;
 }
 
 .linkBtn-1 {
@@ -81,28 +82,23 @@ nav ul li {
   background-color: transparent;
   box-shadow: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 16px;
   padding-top: 10px;
-  padding-right: 300px;
-  margin-bottom: -20px;
+  padding-right: 850px;
+  /* margin-bottom: -20px; */
+  width: 90%;
 }
 
 .active {
   color: purple;
 }
 
-.dateDisplay {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  font-size: 1rem;
-  padding-right: 70px;
+.container {
+  padding-top: 20px;
 }
 
-h1 {
-  font-size: 1.5rem;
+.addNew {
+  padding-top: 20px;
 }
 
 button {
@@ -127,12 +123,6 @@ input {
   margin-top: 2rem;
 }
 
-/* .contact h2 {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  text-align: center;
-} */
-
 .contact p,
 .contact ul {
   text-align: left;
@@ -156,10 +146,5 @@ footer {
 
 footer a {
   text-decoration: none;
-  color: white;
-}
-
-footer img {
-  width: 1rem;
-  color: white;
+  
 }
