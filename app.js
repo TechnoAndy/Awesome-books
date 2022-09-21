@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable max-classes-per-file */
 
 // Book Class: Represents a book
