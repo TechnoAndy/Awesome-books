@@ -1,0 +1,39 @@
+/* Reset */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.line {
+  margin-top: 50px;
+  border-bottom: 2px solid black;
+  width: 10%;
+  margin-inline: auto;
+}
+
+.table {
+  width: 900px;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.form {
+  width: 600px;
+  max-width: 95%;
+  padding-left: 0;
+}
+
+.btn {
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+}
