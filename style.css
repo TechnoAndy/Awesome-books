@@ -1,11 +1,16 @@
 /* Reset */
-ul {
+ul[role="list"] {
   list-style-type: none;
   padding: 0;
 }
 
 body {
   font-family: "Comic Neue", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  border: 1px solid orange;
 }
 
 html {
@@ -40,25 +45,6 @@ h2 {
   position: relative;
   left: 100%;
   transform: translateX(-100%);
-}
-
-header {
-  display: flex;
-  justify-content: right;
-  border: 3px solid black;
-  margin-left: 5px;
-  margin-top: 5px;
-  width: 98%;
-}
-
-nav ul {
-  display: flex;
-  font-size: 1rem;
-}
-
-nav ul li {
-  list-style-type: none;
-  margin-left: 1rem;
 }
 
 .linkBtn {
@@ -116,7 +102,6 @@ input {
 }
 
 .contact {
-  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -139,14 +124,19 @@ input {
 /* Footer Section */
 footer {
   width: 100%;
-  border: 3px solid black;
-  padding: 0.5rem;
-  position: fixed;
-  bottom: 0;
-  text-align: left;
 }
 
 footer a {
   text-decoration: none;
   color: black;
+}
+
+.page {
+  display: none;
+  margin-top: -4em;
+}
+
+.current {
+  display: flex;
+  align-items: center;
 }
