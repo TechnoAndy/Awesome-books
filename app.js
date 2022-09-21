@@ -9,7 +9,7 @@ const listSec = document.querySelector('.list');
 const addNewSec = document.querySelector('.addNew');
 const contactSec = document.querySelector('.contact');
 
-const addBtn = document.querySelector('#addBtn');
+/* const addBtn = document.querySelector('#addBtn'); */
 
 // Book Class: Represents a book
 class Book {
@@ -162,9 +162,3 @@ contactBtn.addEventListener('click', () => {
   contactSec.style.display = 'flex';
 });
 
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    addBtn.click();
-  }
-});
