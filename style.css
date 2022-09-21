@@ -131,6 +131,11 @@ footer a {
   color: black;
 }
 
+.contact-content {
+  width: 500px;
+  max-width: 100%;
+}
+
 .page {
   display: none;
   margin-top: -4em;
