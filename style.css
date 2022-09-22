@@ -1,11 +1,19 @@
 /* Reset */
-ul {
+ul[role="list"] {
   list-style-type: none;
   padding: 0;
 }
 
 body {
   font-family: "Comic Neue", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -36,4 +44,103 @@ h2 {
   position: relative;
   left: 100%;
   transform: translateX(-100%);
+}
+
+.linkBtn {
+  color: black;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  padding-top: 10px;
+
+  /* text-align: right; */
+  margin-right: 10px;
+  width: 150%;
+  height: 5vh;
+}
+
+.linkBtn-1 {
+  color: black;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-right: 800px;
+  text-align: left;
+  width: 100%;
+  height: 5vh;
+}
+
+.active {
+  color: purple;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.addNew {
+  padding-top: 20px;
+}
+
+button {
+  border: 2px solid black;
+  box-shadow: 2px 2px 1px black;
+  padding: 0.25rem;
+}
+
+input {
+  height: 30px;
+  margin: 5px 0;
+  border: 3px solid black;
+}
+
+.contact {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 2rem;
+}
+
+.contact p,
+.contact ul {
+  text-align: left;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact ul {
+  margin-left: 3rem;
+}
+
+/* Footer Section */
+footer {
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-content {
+  width: 500px;
+  max-width: 100%;
+}
+
+.page {
+  display: none;
+  margin-top: -4em;
+}
+
+.current {
+  display: flex;
+  align-items: center;
 }
