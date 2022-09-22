@@ -131,7 +131,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   // Remove book from store
   Store.unSaveBook(
     e.target.parentElement.previousElementSibling.previousElementSibling
-      .textContent
+      .textContent,
   );
 });
 
@@ -140,7 +140,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
     const page = document.querySelector(
-      `#${link.getAttribute('data-trigger')}`
+      `#${link.getAttribute('data-trigger')}`,
     );
 
     // remove current class from the one who have it.
@@ -204,7 +204,7 @@ function formatDate(date) {
       break;
   }
 
-  return `${months[month]} ${day}${state} ${year}, `;
+  return `${months[month]} ${day}${state} ${year},`;
 }
 
 setInterval(() => {
