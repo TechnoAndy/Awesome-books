@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Awsome Books
-This Project `Awesome books` is a simple webApp that displays a list of books and allows you to add and remove books from that list.
+This Project `Awesome books` is a simple webApp that displays a list of books and allows you to add and remove books from that list. The books that have been added will be stored in the local storage and removed once deleted.
 
 ## Preview
 > Desktop View
@@ -16,6 +16,7 @@ This Project `Awesome books` is a simple webApp that displays a list of books an
 
 - `HTML5`
 - `JavaScript`
+- `Bootstrap`
 
 ## Live Demo (if available)
 
